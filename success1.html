@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>GRAND HYATT</title>
+  <link rel="icon" type="image/png" href="Logoo.PNG">
+    <link rel="stylesheet" href="style success.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("hJeSVJyKonNFKaf_5");
+        })();
+    </script>
+
+    <style>
+        .success-message {
+            color: green;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+        <a href="home.html" class="brand">GRAND HYATT</a>
+
+        <div class="hamburger" id="hamb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="booking.html">booking</a></li>
+                <li><a href="success1.html">success</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a href="index.html" class="login-btn" id="loginButton">Login</a>
+
+            <div id="welcomeMessage" class="welcome-msg" style="display:none;">
+                Welcome <span id="usernameDisplay">User</span>
+                <button id="logoutButton" class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+    <h1>Book Your Room</h1>
+
+    <form id="bookingForm">
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Hotel</label>
+            <select id="hotel" required>
+                <option value="">Select Hotel</option>
+                <option>Sunrise Hotel</option>
+                <option>Ocean View</option>
+                <option>Mountain Resort</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Room Type</label>
+            <select id="room" required>
+                <option value="">Select Room</option>
+                <option>Single</option>
+                <option>Double</option>
+                <option>Suite</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Check-in Date</label>
+            <input type="date" id="checkin" required>
+        </div>
+
+        <div class="form-group">
+            <label>Number of Days</label>
+            <input type="number" id="days" min="1" required>
+        </div>
+
+        <button type="submit" class="book-btn">Book Now</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navContainer").classList.toggle("nav-links-open");
+}
+
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const booking = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        hotel: document.getElementById("hotel").value,
+        room: document.getElementById("room").value,
+        date: document.getElementById("checkin").value,
+        days: document.getElementById("days").value
+    };
+
+    emailjs.send("service_x3pivdw", "template_6m33fjp", booking);
+
+    document.getElementById("result").innerHTML = `
+        <div class="success-message">Booking Completed Successfully</div>
+        <table>
+            <tr><th>Full Name</th><td>${booking.name}</td></tr>
+            <tr><th>Email</th><td>${booking.email}</td></tr>
+            <tr><th>Hotel</th><td>${booking.hotel}</td></tr>
+            <tr><th>Room</th><td>${booking.room}</td></tr>
+            <tr><th>Check-in Date</th><td>${booking.date}</td></tr>
+            <tr><th>Days</th><td>${booking.days}</td></tr>
+        </table>
+    `;
+
+    localStorage.setItem("booking", JSON.stringify(booking));
+});
+</script>
+
+</body>
+</html>

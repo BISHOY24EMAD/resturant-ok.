@@ -1,0 +1,250 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100%;
+    background: #d0004b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 3%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.brand {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #ffccd5;
+}
+
+.login-btn {
+    padding: 8px 16px;
+    color: white !important;
+    border-radius: 6px;
+    border: 2px solid white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: white;
+    color: #d0004b !important;
+    border-color: #d0004b;
+}
+
+.container {
+    width: 85%;
+    max-width: 550px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #d0004b;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1.5px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    border-color: #d0004b;
+    box-shadow: 0 0 6px rgba(208, 0, 75, 0.3);
+}
+
+.book-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: #d0004b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.book-btn:hover {
+    background: #a6003a;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 400px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #d0004b;
+}
+
+th {
+    background: #d0004b;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    background: #ffe6ee;
+    text-align: left;
+}
+
+.back-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 20px;
+    background: #d0004b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.back-button:hover {
+    background: #a6003a;
+}
+
+.hamburger-menu {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-links-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .nav-links-open {
+        max-height: 500px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .login-btn {
+        margin: 10px auto;
+        width: 80%;
+        text-align: center;
+    }
+    
+    .hamburger-menu {
+        display: block;
+    }
+
+    .container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

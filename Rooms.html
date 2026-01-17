@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>GRAND HYATT</title>
+  <link rel="icon" type="image/png" href="Logoo.PNG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style Detailes.css">
+</head>
+
+<body>
+   <nav class="navbar">
+        <a href="home.html" class="brand">GRAND HYATT</a>
+
+        <div class="hamburger" id="hamb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="booking.html">booking</a></li>
+                <li><a href="success1.html">success</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a href="index.html" class="login-btn" id="loginButton">Login</a>
+
+            <div id="welcomeMessage" class="welcome-msg" style="display:none;">
+                Welcome <span id="usernameDisplay">User</span>
+                <button id="logoutButton" class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container" style="padding-top: 100px;">
+        <div class="title">
+            <h2>Our Luxury Collection</h2>
+            <p>Discover our range of exclusive rooms, suites, and villas</p>
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="room-card">
+                <div class="card-image">
+                    <img src="Detailes Image/Deluxe Room.jpg" alt="Deluxe Room">
+                    <span class="badge">Available</span>
+                </div>
+                <div class="card-content">
+                    <h3>Deluxe Room</h3>
+                    <p>Elegantly designed room with king-size bed, city views, and modern amenities.</p>
+                    <div class="room">
+                        <span><i class="fa-solid fa-expand"></i> 35 m²</span>
+                        <span><i class="fa-solid fa-user-group"></i> 2 guests</span>
+                    </div>
+                    <div class="card-foot">
+                        <div class="buttons">
+                            <button class="btn btn-outline" onclick="openRoom('deluxe')">Details</button>
+                            <button class="btn btn-primary" onclick="openRoom('deluxe')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="card-image">
+                    <img src="Detailes Image/Executive Suite.jpg" alt="Executive Suite">
+                    <span class="badge">Available</span>
+                </div>
+                <div class="card-content">
+                    <h3>Executive Suite</h3>
+                    <p>Spacious suite with separate living area, premium furnishings, and panoramic views.</p>
+                    <div class="room">
+                        <span><i class="fa-solid fa-expand"></i> 65 m²</span>
+                        <span><i class="fa-solid fa-user-group"></i> 4 guests</span>
+                    </div>
+                    <div class="card-foot">
+                        <div class="buttons">
+                            <button class="btn btn-outline" onclick="openRoom('executive')">Details</button>
+                            <button class="btn btn-primary" onclick="openRoom('executive')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="card-image">
+                    <img src="Detailes Image/Private Pool Villa.jpg" alt="Pool Villa">
+                    <span class="badge">Available</span>
+                </div>
+                <div class="card-content">
+                    <h3>Private Pool Villa</h3>
+                    <p>Ultimate luxury villa with private pool, garden, and dedicated butler service.</p>
+                    <div class="room">
+                        <span><i class="fa-solid fa-expand"></i> 120 m²</span>
+                        <span><i class="fa-solid fa-user-group"></i> 6 guests</span>
+                    </div>
+                    <div class="card-foot">
+                        <div class="buttons">
+                            <button class="btn btn-outline" onclick="openRoom('villa')">Details</button>
+                            <button class="btn btn-primary" onclick="openRoom('villa')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="card-image">
+                    <img src="Detailes Image/Family Garden Suite.jpg" alt="Family Suite">
+                    <span class="badge">Available</span>
+                </div>
+                <div class="card-content">
+                    <h3>Family Garden Suite</h3>
+                    <p>Ground floor suite with direct garden access, perfect for families with children.</p>
+                    <div class="room">
+                        <span><i class="fa-solid fa-expand"></i> 80 m²</span>
+                        <span><i class="fa-solid fa-user-group"></i> 5 guests</span>
+                    </div>
+                    <div class="card-foot">
+                        <div class="buttons">
+                            <button class="btn btn-outline" onclick="openRoom('family')">Details</button>
+                            <button class="btn btn-primary" onclick="openRoom('family')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="card-image">
+                    <img src="Detailes Image/Ocean View Penthouse.jpg" alt="Penthouse">
+                    <span class="badge badge-few">Few Left</span>
+                </div>
+                <div class="card-content">
+                    <h3>Ocean Penthouse</h3>
+                    <p>Top floor exclusivity with breathtaking ocean views and private jacuzzi.</p>
+                    <div class="room">
+                        <span><i class="fa-solid fa-expand"></i> 150 m²</span>
+                        <span><i class="fa-solid fa-user-group"></i> 2 guests</span>
+                    </div>
+                    <div class="card-foot">
+                        <div class="buttons">
+                            <button class="btn btn-outline" onclick="openRoom('penthouse')">Details</button>
+                            <button class="btn btn-primary" onclick="openRoom('penthouse')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="card-image">
+                    <img src="Detailes Image/Superior Twin Room.jpg" alt="Twin Room">
+                    <span class="badge badge-best">Best Value</span>
+                </div>
+                <div class="card-content">
+                    <h3>Superior Twin Room</h3>
+                    <p>Comfortable room with two twin beds, work desk, and bright interiors.</p>
+                    <div class="room">
+                        <span><i class="fa-solid fa-expand"></i> 30 m²</span>
+                        <span><i class="fa-solid fa-user-group"></i> 2 guests</span>
+                    </div>
+                    <div class="card-foot">
+                        <div class="buttons">
+                            <button class="btn btn-outline" onclick="openRoom('twin')">Details</button>
+                            <button class="btn btn-primary" onclick="openRoom('twin')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal-overlay" id="roomModal">
+        <div class="modal-container">
+            <div class="modal-head">
+                <h3 id="modal-title">Room Name</h3>
+                <button class="close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="details-section">
+                    <div class="image-slider">
+                        <img id="modal-image" src="" alt="Room">
+                    </div>
+
+                    <div class="room" style="margin-top: 15px;">
+                        <span id="modal-size"><i class="fa-solid fa-expand"></i> -- m²</span>
+                        <span id="modal-guests"><i class="fa-solid fa-user-group"></i> -- guests</span>
+                        <span id="modal-bed"><i class="fa-solid fa-bed"></i> --</span>
+                    </div>
+
+                    <div style="margin: 20px 0;">
+                        <h4>Description</h4>
+                        <p id="modal-desc" style="color: #666; font-size: 15px; line-height: 1.6; margin-top: 10px;">
+                            --
+                        </p>
+                    </div>
+
+                    <h4>Key Features</h4>
+                    <div class="features-grid">
+                        <div class="feature-item"><i class="fa-solid fa-wifi"></i><span>Fast WiFi</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-tv"></i><span>Smart TV</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-wind"></i><span>AC</span></div>
+                        <div class="feature-item"><i class="fa-solid fa-mug-hot"></i><span>Coffee</span></div>
+                    </div>
+                    <h4>Amenities</h4>
+
+                    <div class="amenities-list" id="modal-amenities">
+                        <div class="amenity">Separate living room</div>
+                        <div class="amenity">Dining area</div>
+                        <div class="amenity">Executive lounge access</div>
+                        <div class="amenity">Premium bathroom amenities</div>
+                        <div class="amenity">Walk-in closet</div>
+                        <div class="amenity">Complimentary minibar</div>
+                    </div>
+
+
+                </div>
+                <div class="booking-sidebar">
+                    <div class="booking-box">
+                        <h4>Book This Room</h4>
+                        <h2 id="modal-price" style="color: #d0004b ; margin-bottom: 20px;">
+                            $ <small style="font-size:15px; color:#666">/night</small>
+                        </h2>
+
+                        <div class="form-group">
+                            <label>Check-in</label>
+                            <input type="date" class="form-input" id="check-in-date">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Check-out</label>
+                            <input type="date" class="form-input" id="check-out-date">
+                        </div>
+
+                        <button class="search-btn" onclick="confirmBooking()">Book Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-container success-box">
+            <div class="success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Booking Confirmed!</h3>
+            <p id="success-message">Your room has been booked successfully.</p>
+            <button class="btn-primary" onclick="closeSuccessModal()" style="width: 100%; margin-top: 20px;">OK,
+                Great!</button>
+        </div>
+    </div>
+    <script src="script Detailes.js"></script>
+</body>
+
+</html>

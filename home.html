@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRAND HYATT</title>
+  <link rel="icon" type="image/png" href="Logoo.PNG">
+  <link rel="stylesheet" href="style home.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+
+  <nav class="navbar">
+        <a href="home.html" class="brand">GRAND HYATT</a>
+
+        <div class="hamburger" id="hamb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="booking.html">booking</a></li>
+                <li><a href="success1.html">success</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a href="index.html" class="login-btn" id="loginButton">Login</a>
+
+            <div id="welcomeMessage" class="welcome-msg" style="display:none;">
+                Welcome <span id="usernameDisplay">User</span>
+                <button id="logoutButton" class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+<script>
+
+const loginButton = document.getElementById("loginButton");         
+const authModal = document.getElementById("authModal");             
+const authForm = document.getElementById("authForm");              
+const usernameInput = document.getElementById("regUsername");      
+const emailGroup = document.getElementById("emailGroup");           
+const formTitle = document.getElementById("formTitle");             
+const submitButton = document.getElementById("submitButton");       
+const switchModeLink = document.getElementById("switchMode");       
+const switchText = document.getElementById("switchText");           
+const welcomeMessage = document.getElementById("welcomeMessage");   
+const usernameDisplay = document.getElementById("usernameDisplay");
+const logoutButton = document.getElementById("logoutButton");       
+
+let isLoginMode = true; 
+
+
+const hamb = document.getElementById("hamb");
+const navLinks = document.querySelector(".nav-links"); 
+
+if (hamb && navLinks) {
+    hamb.onclick = () => {
+        navLinks.classList.toggle("active");
+    };
+}
+
+
+
+function checkAuthState() {
+    const savedUsername = localStorage.getItem('currentUser'); 
+    
+    if (savedUsername) {
+
+        if (loginButton) loginButton.style.display = 'none';
+        if (welcomeMessage) {
+            welcomeMessage.style.display = 'flex'; 
+            usernameDisplay.textContent = savedUsername; 
+        }
+    } else {
+
+        if (loginButton) loginButton.style.display = 'block';
+        if (welcomeMessage) welcomeMessage.style.display = 'none'; 
+    }
+}
+
+if (switchModeLink) {
+    switchModeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        isLoginMode = !isLoginMode; 
+
+        if (isLoginMode) {
+
+            formTitle.textContent = 'Login';
+            submitButton.textContent = 'Login';
+            switchText.textContent = "Don't have an account?";
+            switchModeLink.textContent = 'Sign Up';
+            emailGroup.style.display = 'none'; 
+        } else {
+
+            formTitle.textContent = 'Create Account';
+            submitButton.textContent = 'Sign Up';
+            switchText.textContent = "Already have an account?";
+            switchModeLink.textContent = 'Login';
+            emailGroup.style.display = 'block'; 
+        }
+    });
+}
+
+if (loginButton && authModal) {
+
+    loginButton.addEventListener('click', (e) => {
+        e.preventDefault(); 
+
+        isLoginMode = true; 
+        if (emailGroup) emailGroup.style.display = 'none';
+        if (formTitle) formTitle.textContent = 'Login';
+        if (submitButton) submitButton.textContent = 'Login';
+        if (switchText) switchText.textContent = "Don't have an account?";
+        if (switchModeLink) switchModeLink.textContent = 'Sign Up';
+        
+        authModal.style.display = 'flex'; 
+    });
+    
+
+    const closeBtn = authModal.querySelector(".close-btn");
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            authModal.style.display = 'none';
+        });
+    }
+
+
+    window.addEventListener('click', (event) => {
+        if (event.target === authModal) {
+            authModal.style.display = 'none';
+        }
+    });
+}
+
+
+if (authForm) {
+    authForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const enteredUsername = usernameInput.value;
+        
+ 
+        localStorage.setItem('currentUser', enteredUsername); 
+        
+        if (isLoginMode) {
+            alert(`Login Successful! Welcome, ${enteredUsername}.`);
+        } else {
+            alert(`Account Created! Welcome, ${enteredUsername}.`);
+        }
+        
+        authModal.style.display = 'none';
+        checkAuthState(); 
+
+    
+        window.location.href = 'home.html'; 
+    });
+}
+
+
+if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('currentUser'); 
+        alert("You have been logged out.");
+        checkAuthState(); 
+        window.location.href = 'home.html';
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', checkAuthState);
+</script>
+</script>
+  <!-------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="video">
+    <video controls autoplay muted loop width="100%">
+      <source src="WhatsApp Video 2026-01-16 at 10.28.47 PM.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!--...........................................................................................................................-->
+  <div class="content-wrapper">
+
+    <div class="image-column">
+      <img src="723702669.jpg" alt="Image">
+      <img src="723702684.jpg" alt="Image">
+      <img src="723702695.jpg" alt="Image">
+      <img src="723702743.jpg" alt="Image">
+      <img src="723702751.jpg" alt="Image">
+      <img src="723702761.jpg" alt="Image">
+      <img src="723702822.jpg" alt="Image">
+      <img src="723702912.jpg" alt="Image">
+      <img src="723702963.jpg" alt="Image">
+      <img src="723702974.jpg" alt="Image">
+      <img src="723703014.jpg" alt="Image">
+      <img src="723703053.jpg" alt="Image">
+      <img src="723703124.jpg" alt="Image">
+      <img src="723703136.jpg" alt="Image">
+      <img src="723703154.jpg" alt="Image">
+      <img src="723703167.jpg" alt="Image">
+      <img src="723703187.jpg" alt="Image">
+      <img src="723703199.jpg" alt="Image">
+      <img src="723703205.jpg" alt="Image">
+      <img src="723703220.jpg" alt="Image">
+      <img src="723703229.jpg" alt="Image">
+      <img src="723703246.jpg" alt="Image">
+      <img src="723703262.jpg" alt="Image">
+      <img src="723703283.jpg" alt="Image">
+      <img src="723703328.jpg" alt="Image">
+      <img src="723703459.jpg" alt="Image">
+      <img src="723703493.jpg" alt="Image">
+      <img src="783251485.jpg" alt="Image">
+    </div>
+    <!--.......................................................................................................................................-->
+    <section class="hotel-info">
+
+      <h2>Grand Hyatt Erawan Bangkok</h2>
+      <p>
+        Discover a luxurious experience in the heart of Bangkok at the <b>Grand Hyatt Erawan Bangkok</b>, a 5-star hotel
+        strategically located in the <b>Ratchaprasong</b> area of the city center. The hotel features resort-style
+        amenities and is close to the famous cultural landmark <b>Erawan Shrine</b>. It is also directly connected to
+        <b>Chidlom BTS Station</b>, providing easy access to <b>Ratchadamri BTS</b> and major shopping centers like
+        <b>CentralWorld</b>, <b>Siam Paragon</b>, <b>Erawan Mall</b>, and <b>Gaysorn via Skywalk</b>.
+      </p>
+      <p>
+        The hotel's location offers a wide range of leisure activities, including the <b>SEA LIFE Bangkok Ocean
+          World</b>, the <b>Jim Thompson House</b> (museum), <b>ice skating rink</b>, and <b>boat trips from Pratunam
+          Pier to Khao San Road</b>. This prime location makes the hotel an ideal base for exploring all corners of
+        Bangkok.
+      </p>
+
+      <h3>Luxury Rooms & Suites</h3>
+      <p>
+        Spacious rooms offer stunning views of <b>Bangkok city</b>, with <b>modern</b> interiors blending Thai elegance
+        with contemporary details. All rooms include:
+      </p>
+      <ul>
+        <li>Spacious work area</li>
+        <li>Large bathroom with shower and deep bathtub</li>
+        <li>Hyatt Grand™ bed for the perfect sleep experience</li>
+        <li>Flat-screen TV and laptop-sized safe</li>
+        <li>Tea/coffee making facilities and minibar</li>
+        <li>Pillow menu for personalized comfort</li>
+        <li>Electronic app for room service requests and complimentary Wi-Fi</li>
+      </ul>
+      <p>
+        For guests staying in <b>Club Rooms & Suites</b>, additional benefits include daily breakfast and evening
+        cocktails at the Grand Club Lounge.
+      </p>
+
+      <h3>Facilities & Services</h3>
+      <ul>
+        <li>i.sawan Residential spa and wellness center, award-winning for massage and specialized treatments</li>
+        <li>24-hour fitness center</li>
+        <li>Outdoor swimming pool with sleek design for relaxation and swimming</li>
+      </ul>
+
+      <h3>Fine Dining Experience</h3>
+      <p>
+        The hotel features 9 restaurants and a luxury bar offering global dining experiences:
+      </p>
+      <ul>
+        <li>Authentic local and international cuisine</li>
+        <li>Buffets, light lunches, and afternoon tea</li>
+        <li>Authentic French croissants and premium Thai chocolates</li>
+        <li>Exceptional service in an elegant atmosphere</li>
+      </ul>
+      <p>
+        Restaurant hours and services may vary depending on circumstances, but the experience remains world-class.
+      </p>
+      <!------------------------------------------------------------------------------------------------------------------------------------------------>
+      <section class="services">
+        <div class="service-card">
+          <span class="icon">🍽️</span>
+          <p>9 Restaurants</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🅿️</span>
+          <p>Free On-Site Parking</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">☕</span>
+          <p>Excellent Breakfast</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">📶</span>
+          <p>Free Wi-Fi</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🚌</span>
+          <p>Airport Shuttle</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🏊‍♂️</span>
+          <p>Outdoor Pool</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">💆‍♀️</span>
+          <p>Spa & Wellness Center</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🛎️</span>
+          <p>Room Service</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🏋️‍♂️</span>
+          <p>Fitness Center</p>
+        </div>
+        <div class="service-card">
+          <span class="icon">🛁</span>
+          <p>Private Bathroom</p>
+        </div>
+      </section>
+
+    </section>
+    
+</body>
+
+</html>
