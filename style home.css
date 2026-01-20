@@ -84,28 +84,6 @@
   border-radius: 3px;
 }
 
-/* Content Wrapper */
-.content-wrapper {
-  display: flex;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 30px auto;
-  direction: ltr;
-}
-
-.image-column {
-  flex: 0 0 250px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.image-column img {
-  width: calc(50% - 5px);
-  border-radius: 5px;
-  object-fit: cover;
-  cursor: pointer;
-}
 
 .hotel-info {
   flex: 1;
